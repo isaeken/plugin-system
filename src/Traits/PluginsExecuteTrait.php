@@ -1,12 +1,22 @@
 <?php
-
+/**
+ * Plugin System
+ * @version v1.0
+ * @author İsa Eken
+ * @license MIT
+ */
 
 namespace IsaEken\PluginSystem\Traits;
 
-
+/**
+ * Trait PluginsExecuteTrait
+ * @package IsaEken\PluginSystem\Traits
+ */
 trait PluginsExecuteTrait
 {
     /**
+     * Execute method of all plugins
+     *
      * @param string $name
      * @param mixed ...$arguments
      * @return bool
