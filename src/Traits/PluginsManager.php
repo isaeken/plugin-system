@@ -1,15 +1,25 @@
 <?php
-
+/**
+ * Plugin System
+ * @version v1.0
+ * @author İsa Eken
+ * @license MIT
+ */
 
 namespace IsaEken\PluginSystem\Traits;
-
 
 use IsaEken\PluginSystem\Exceptions\PluginNotFoundException;
 use IsaEken\PluginSystem\Plugin;
 
+/**
+ * Trait PluginsManager
+ * @package IsaEken\PluginSystem\Traits
+ */
 trait PluginsManager
 {
     /**
+     * Enable a specific plugin
+     *
      * @param Plugin $plugin
      * @return Plugin
      * @throws PluginNotFoundException
@@ -20,6 +30,8 @@ trait PluginsManager
     }
 
     /**
+     * Disable a specific plugin
+     *
      * @param Plugin $plugin
      * @return Plugin
      * @throws PluginNotFoundException
@@ -30,6 +42,8 @@ trait PluginsManager
     }
 
     /**
+     * Toggle a specific plugin
+     *
      * @param Plugin $plugin
      * @return Plugin
      * @throws PluginNotFoundException
@@ -40,6 +54,8 @@ trait PluginsManager
     }
 
     /**
+     * Check plugin is enabled
+     *
      * @param Plugin $plugin
      * @return bool
      * @throws PluginNotFoundException
@@ -50,6 +66,8 @@ trait PluginsManager
     }
 
     /**
+     * Check plugin is disabled
+     *
      * @param Plugin $plugin
      * @return bool
      * @throws PluginNotFoundException
