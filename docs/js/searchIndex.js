@@ -23,22 +23,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Helpers\\Str",
             "name": "Str",
-            "summary": "",
+            "summary": "Class\u0020Str",
             "url": "classes/IsaEken-PluginSystem-Helpers-Str.html"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Helpers\\Str\u003A\u003AstartsWith\u0028\u0029",
             "name": "startsWith",
-            "summary": "",
+            "summary": "Check\u0020if\u0020string\u0020starts\u0020with",
             "url": "classes/IsaEken-PluginSystem-Helpers-Str.html#method_startsWith"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Helpers\\Str\u003A\u003AendsWith\u0028\u0029",
             "name": "endsWith",
-            "summary": "",
+            "summary": "Check\u0020if\u0020string\u0020ends\u0020with",
             "url": "classes/IsaEken-PluginSystem-Helpers-Str.html#method_endsWith"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Plugin",
             "name": "Plugin",
-            "summary": "",
+            "summary": "Class\u0020Plugin",
             "url": "classes/IsaEken-PluginSystem-Plugin.html"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Plugin\u003A\u003A__construct\u0028\u0029",
@@ -48,57 +48,57 @@ Search.appendIndex(
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Plugin\u003A\u003Afill\u0028\u0029",
             "name": "fill",
-            "summary": "",
+            "summary": "Fill\u0020attributes\u0020from\u0020array\u0020in\u0020plugin",
             "url": "classes/IsaEken-PluginSystem-Plugin.html#method_fill"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Plugin\u003A\u003AsetAttribute\u0028\u0029",
             "name": "setAttribute",
-            "summary": "",
+            "summary": "Set\u0020attribute\u0020in\u0020plugin",
             "url": "classes/IsaEken-PluginSystem-Plugin.html#method_setAttribute"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Plugin\u003A\u003AgetAttribute\u0028\u0029",
             "name": "getAttribute",
-            "summary": "",
+            "summary": "Get\u0020attribute\u0020from\u0020plugin",
             "url": "classes/IsaEken-PluginSystem-Plugin.html#method_getAttribute"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Plugin\u003A\u003Aexecute\u0028\u0029",
             "name": "execute",
-            "summary": "",
+            "summary": "Execute\u0020method\u0020in\u0020plugin",
             "url": "classes/IsaEken-PluginSystem-Plugin.html#method_execute"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Plugin\u003A\u003A\u0024name",
             "name": "name",
-            "summary": "",
+            "summary": "Your\u0020plugins\u0020name",
             "url": "classes/IsaEken-PluginSystem-Plugin.html#property_name"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Plugin\u003A\u003A\u0024description",
             "name": "description",
-            "summary": "",
+            "summary": "Your\u0020plugins\u0020description",
             "url": "classes/IsaEken-PluginSystem-Plugin.html#property_description"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Plugin\u003A\u003A\u0024version",
             "name": "version",
-            "summary": "",
+            "summary": "Your\u0020plugins\u0020version",
             "url": "classes/IsaEken-PluginSystem-Plugin.html#property_version"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Plugin\u003A\u003A\u0024author",
             "name": "author",
-            "summary": "",
+            "summary": "Your\u0020plugins\u0020author",
             "url": "classes/IsaEken-PluginSystem-Plugin.html#property_author"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\PluginSystem",
             "name": "PluginSystem",
-            "summary": "",
+            "summary": "Class\u0020PluginSystem",
             "url": "classes/IsaEken-PluginSystem-PluginSystem.html"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\PluginSystem\u003A\u003Aload\u0028\u0029",
             "name": "load",
-            "summary": "",
+            "summary": "Load\u0020a\u0020plugin\u0020file",
             "url": "classes/IsaEken-PluginSystem-PluginSystem.html#method_load"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\PluginTester",
             "name": "PluginTester",
-            "summary": "",
+            "summary": "Class\u0020PluginTester",
             "url": "classes/IsaEken-PluginSystem-PluginTester.html"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\PluginTester\u003A\u003A__construct\u0028\u0029",
@@ -108,97 +108,97 @@ Search.appendIndex(
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\PluginTester\u003A\u003Aexists\u0028\u0029",
             "name": "exists",
-            "summary": "",
+            "summary": "Check\u0020plugin\u0020file\u0020is\u0020exists",
             "url": "classes/IsaEken-PluginSystem-PluginTester.html#method_exists"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\PluginTester\u003A\u003AclassName\u0028\u0029",
             "name": "className",
-            "summary": "",
+            "summary": "Check\u0020plugin\u0020class\u0020name\u0020is\u0020valid",
             "url": "classes/IsaEken-PluginSystem-PluginTester.html#method_className"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\PluginTester\u003A\u003Avalidate\u0028\u0029",
             "name": "validate",
-            "summary": "",
+            "summary": "Validate\u0020the\u0020plugin\u0020with\u0020everything",
             "url": "classes/IsaEken-PluginSystem-PluginTester.html#method_validate"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\PluginTester\u003A\u003A\u0024plugin",
             "name": "plugin",
-            "summary": "",
+            "summary": "Plugin\u0020file\u0020path",
             "url": "classes/IsaEken-PluginSystem-PluginTester.html#property_plugin"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginManageableTrait",
             "name": "PluginManageableTrait",
-            "summary": "",
+            "summary": "Trait\u0020PluginManageableTrait",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginManageableTrait.html"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginManageableTrait\u003A\u003AisEnabled\u0028\u0029",
             "name": "isEnabled",
-            "summary": "",
+            "summary": "Check\u0020plugin\u0020is\u0020enabled",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginManageableTrait.html#method_isEnabled"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginManageableTrait\u003A\u003AisDisabled\u0028\u0029",
             "name": "isDisabled",
-            "summary": "",
+            "summary": "Check\u0020plugin\u0020is\u0020disabled",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginManageableTrait.html#method_isDisabled"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginManageableTrait\u003A\u003Aenable\u0028\u0029",
             "name": "enable",
-            "summary": "",
+            "summary": "Enable\u0020plugin",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginManageableTrait.html#method_enable"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginManageableTrait\u003A\u003Adisable\u0028\u0029",
             "name": "disable",
-            "summary": "",
+            "summary": "Disable\u0020plugin",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginManageableTrait.html#method_disable"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginManageableTrait\u003A\u003Atoggle\u0028\u0029",
             "name": "toggle",
-            "summary": "",
+            "summary": "Toggle\u0020enabled\u0020state\u0020of\u0020plugin",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginManageableTrait.html#method_toggle"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginsExecuteTrait",
             "name": "PluginsExecuteTrait",
-            "summary": "",
+            "summary": "Trait\u0020PluginsExecuteTrait",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginsExecuteTrait.html"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginsExecuteTrait\u003A\u003Aexecute\u0028\u0029",
             "name": "execute",
-            "summary": "",
+            "summary": "Execute\u0020method\u0020of\u0020all\u0020plugins",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginsExecuteTrait.html#method_execute"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginsManager",
             "name": "PluginsManager",
-            "summary": "",
+            "summary": "Trait\u0020PluginsManager",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginsManager.html"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginsManager\u003A\u003Aenable\u0028\u0029",
             "name": "enable",
-            "summary": "",
+            "summary": "Enable\u0020a\u0020specific\u0020plugin",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginsManager.html#method_enable"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginsManager\u003A\u003Adisable\u0028\u0029",
             "name": "disable",
-            "summary": "",
+            "summary": "Disable\u0020a\u0020specific\u0020plugin",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginsManager.html#method_disable"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginsManager\u003A\u003Atoggle\u0028\u0029",
             "name": "toggle",
-            "summary": "",
+            "summary": "Toggle\u0020a\u0020specific\u0020plugin",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginsManager.html#method_toggle"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginsManager\u003A\u003AisEnabled\u0028\u0029",
             "name": "isEnabled",
-            "summary": "",
+            "summary": "Check\u0020plugin\u0020is\u0020enabled",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginsManager.html#method_isEnabled"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginsManager\u003A\u003AisDisabled\u0028\u0029",
             "name": "isDisabled",
-            "summary": "",
+            "summary": "Check\u0020plugin\u0020is\u0020disabled",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginsManager.html#method_isDisabled"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginsTrait",
             "name": "PluginsTrait",
-            "summary": "",
+            "summary": "Trait\u0020PluginsTrait",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginsTrait.html"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginsTrait\u003A\u003A__construct\u0028\u0029",
@@ -208,27 +208,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginsTrait\u003A\u003Aadd\u0028\u0029",
             "name": "add",
-            "summary": "",
+            "summary": "Add\u0020plugin\u0020to\u0020memory",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginsTrait.html#method_add"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginsTrait\u003A\u003Aremove\u0028\u0029",
             "name": "remove",
-            "summary": "",
+            "summary": "Remove\u0020plugin\u0020from\u0020memory",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginsTrait.html#method_remove"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginsTrait\u003A\u003Aautoload\u0028\u0029",
             "name": "autoload",
-            "summary": "",
+            "summary": "Load\u0020all\u0020plugins\u0020in\u0020a\u0020directory",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginsTrait.html#method_autoload"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginsTrait\u003A\u003A\u0024directory",
             "name": "directory",
-            "summary": "",
+            "summary": "Plugins\u0020directory",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginsTrait.html#property_directory"
         },                {
             "fqsen": "\\IsaEken\\PluginSystem\\Traits\\PluginsTrait\u003A\u003A\u0024plugins",
             "name": "plugins",
-            "summary": "",
+            "summary": "Plugins",
             "url": "classes/IsaEken-PluginSystem-Traits-PluginsTrait.html#property_plugins"
         },                {
             "fqsen": "\\",

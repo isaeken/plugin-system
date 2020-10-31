@@ -57,6 +57,14 @@
                                     </ul>
                         </section>
 
+        <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
+                    <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Default.html"><abbr title="\Default">Default</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/IsaEken.html"><abbr title="\IsaEken">IsaEken</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="packages/IsaEken-PluginSystem.html"><abbr title="\IsaEken\PluginSystem">PluginSystem</abbr></a></li>
+                            </ul>
+                        </section>
     
     <section class="phpdocumentor-sidebar__category">
         <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
@@ -82,6 +90,13 @@
     PluginSystem
 
     
+            <div class="phpdocumentor-element__package">
+            in package
+            <ul class="phpdocumentor-breadcrumbs">
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/IsaEken.html">IsaEken</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/IsaEken-PluginSystem.html">PluginSystem</a></li>
+                            </ul>
+        </div>
     
     
             <span class="phpdocumentor-element__extends">
@@ -92,10 +107,12 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PluginSystem.php"><a href="files/src-pluginsystem.html"><abbr title="src/PluginSystem.php">PluginSystem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 </aside>
 
-        
+            <p class="phpdocumentor-summary">Class PluginSystem</p>
+
+    <section class="phpdocumentor-description"></section>
 
 
 
@@ -115,14 +132,14 @@
     <span>
                 &nbsp;: string            </span>
 </dt>
-<dd></dd>
+<dd>Plugins directory</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/IsaEken-PluginSystem-Traits-PluginsTrait.html#property_plugins">$plugins</a>
     <span>
                 &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
+<dd>Plugins</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/IsaEken-PluginSystem-Traits-PluginsTrait.html#method___construct">__construct()</a>
@@ -136,70 +153,70 @@
     <span>
                         &nbsp;: $this    </span>
 </dt>
-<dd></dd>
+<dd>Add plugin to memory</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/IsaEken-PluginSystem-Traits-PluginsTrait.html#method_autoload">autoload()</a>
     <span>
                         &nbsp;: $this    </span>
 </dt>
-<dd></dd>
+<dd>Load all plugins in a directory</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/IsaEken-PluginSystem-Traits-PluginsManager.html#method_disable">disable()</a>
     <span>
                         &nbsp;: <a href="classes/IsaEken-PluginSystem-Plugin.html"><abbr title="\IsaEken\PluginSystem\Plugin">Plugin</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Disable a specific plugin</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/IsaEken-PluginSystem-Traits-PluginsManager.html#method_enable">enable()</a>
     <span>
                         &nbsp;: <a href="classes/IsaEken-PluginSystem-Plugin.html"><abbr title="\IsaEken\PluginSystem\Plugin">Plugin</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Enable a specific plugin</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/IsaEken-PluginSystem-Traits-PluginsExecuteTrait.html#method_execute">execute()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd></dd>
+<dd>Execute method of all plugins</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/IsaEken-PluginSystem-Traits-PluginsManager.html#method_isDisabled">isDisabled()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd></dd>
+<dd>Check plugin is disabled</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/IsaEken-PluginSystem-Traits-PluginsManager.html#method_isEnabled">isEnabled()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd></dd>
+<dd>Check plugin is enabled</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/IsaEken-PluginSystem-PluginSystem.html#method_load">load()</a>
     <span>
                         &nbsp;: <a href="classes/IsaEken-PluginSystem-Plugin.html"><abbr title="\IsaEken\PluginSystem\Plugin">Plugin</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Load a plugin file</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/IsaEken-PluginSystem-Traits-PluginsTrait.html#method_remove">remove()</a>
     <span>
                         &nbsp;: $this    </span>
 </dt>
-<dd></dd>
+<dd>Remove plugin from memory</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/IsaEken-PluginSystem-Traits-PluginsManager.html#method_toggle">toggle()</a>
     <span>
                         &nbsp;: <a href="classes/IsaEken-PluginSystem-Plugin.html"><abbr title="\IsaEken\PluginSystem\Plugin">Plugin</abbr></a>    </span>
 </dt>
-<dd></dd>
+<dd>Toggle a specific plugin</dd>
 
         </dl>
 
@@ -229,10 +246,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/PluginsTrait.php"><a href="files/src-traits-pluginstrait.html"><abbr title="src/Traits/PluginsTrait.php">PluginsTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Plugins directory</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">string</span>
@@ -260,10 +278,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/PluginsTrait.php"><a href="files/src-traits-pluginstrait.html"><abbr title="src/Traits/PluginsTrait.php">PluginsTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Plugins</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
@@ -295,7 +314,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/PluginsTrait.php"><a href="files/src-traits-pluginstrait.html"><abbr title="src/Traits/PluginsTrait.php">PluginsTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 </aside>
 
         <p class="phpdocumentor-summary">Plugins constructor.</p>
@@ -348,10 +367,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/PluginsTrait.php"><a href="files/src-traits-pluginstrait.html"><abbr title="src/Traits/PluginsTrait.php">PluginsTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Add plugin to memory</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">add</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/IsaEken-PluginSystem-Plugin.html"><abbr title="\IsaEken\PluginSystem\Plugin">Plugin</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
@@ -392,10 +412,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/PluginsTrait.php"><a href="files/src-traits-pluginstrait.html"><abbr title="src/Traits/PluginsTrait.php">PluginsTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">77</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Load all plugins in a directory</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">autoload</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$directory</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
@@ -436,10 +457,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/PluginsManager.php"><a href="files/src-traits-pluginsmanager.html"><abbr title="src/Traits/PluginsManager.php">PluginsManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Disable a specific plugin</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">disable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/IsaEken-PluginSystem-Plugin.html"><abbr title="\IsaEken\PluginSystem\Plugin">Plugin</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/IsaEken-PluginSystem-Plugin.html"><abbr title="\IsaEken\PluginSystem\Plugin">Plugin</abbr></a></span></code>
@@ -495,10 +517,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/PluginsManager.php"><a href="files/src-traits-pluginsmanager.html"><abbr title="src/Traits/PluginsManager.php">PluginsManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Enable a specific plugin</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">enable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/IsaEken-PluginSystem-Plugin.html"><abbr title="\IsaEken\PluginSystem\Plugin">Plugin</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/IsaEken-PluginSystem-Plugin.html"><abbr title="\IsaEken\PluginSystem\Plugin">Plugin</abbr></a></span></code>
@@ -554,10 +577,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/PluginsExecuteTrait.php"><a href="files/src-traits-pluginsexecutetrait.html"><abbr title="src/Traits/PluginsExecuteTrait.php">PluginsExecuteTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Execute method of all plugins</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">execute</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$arguments</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
@@ -606,10 +630,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/PluginsManager.php"><a href="files/src-traits-pluginsmanager.html"><abbr title="src/Traits/PluginsManager.php">PluginsManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Check plugin is disabled</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">isDisabled</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/IsaEken-PluginSystem-Plugin.html"><abbr title="\IsaEken\PluginSystem\Plugin">Plugin</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
@@ -665,10 +690,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/PluginsManager.php"><a href="files/src-traits-pluginsmanager.html"><abbr title="src/Traits/PluginsManager.php">PluginsManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Check plugin is enabled</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">isEnabled</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/IsaEken-PluginSystem-Plugin.html"><abbr title="\IsaEken\PluginSystem\Plugin">Plugin</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
@@ -724,10 +750,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/PluginSystem.php"><a href="files/src-pluginsystem.html"><abbr title="src/PluginSystem.php">PluginSystem.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Load a plugin file</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">load</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pluginPath</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$attributes</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/IsaEken-PluginSystem-Plugin.html"><abbr title="\IsaEken\PluginSystem\Plugin">Plugin</abbr></a></span></code>
@@ -776,10 +803,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/PluginsTrait.php"><a href="files/src-traits-pluginstrait.html"><abbr title="src/Traits/PluginsTrait.php">PluginsTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Remove plugin from memory</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">remove</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/IsaEken-PluginSystem-Plugin.html"><abbr title="\IsaEken\PluginSystem\Plugin">Plugin</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
@@ -820,10 +848,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/PluginsManager.php"><a href="files/src-traits-pluginsmanager.html"><abbr title="src/Traits/PluginsManager.php">PluginsManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Toggle a specific plugin</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">toggle</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/IsaEken-PluginSystem-Plugin.html"><abbr title="\IsaEken\PluginSystem\Plugin">Plugin</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$plugin</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/IsaEken-PluginSystem-Plugin.html"><abbr title="\IsaEken\PluginSystem\Plugin">Plugin</abbr></a></span></code>

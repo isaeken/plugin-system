@@ -57,6 +57,14 @@
                                     </ul>
                         </section>
 
+        <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
+                    <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Default.html"><abbr title="\Default">Default</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/IsaEken.html"><abbr title="\IsaEken">IsaEken</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="packages/IsaEken-PluginSystem.html"><abbr title="\IsaEken\PluginSystem">PluginSystem</abbr></a></li>
+                            </ul>
+                        </section>
     
     <section class="phpdocumentor-sidebar__category">
         <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
@@ -86,10 +94,12 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/PluginManageableTrait.php"><a href="files/src-traits-pluginmanageabletrait.html"><abbr title="src/Traits/PluginManageableTrait.php">PluginManageableTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 </aside>
 
-        
+            <p class="phpdocumentor-summary">Trait PluginManageableTrait</p>
+
+    <section class="phpdocumentor-description"></section>
 
 
 
@@ -109,35 +119,35 @@
     <span>
                         &nbsp;: $this    </span>
 </dt>
-<dd></dd>
+<dd>Disable plugin</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/IsaEken-PluginSystem-Traits-PluginManageableTrait.html#method_enable">enable()</a>
     <span>
                         &nbsp;: $this    </span>
 </dt>
-<dd></dd>
+<dd>Enable plugin</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/IsaEken-PluginSystem-Traits-PluginManageableTrait.html#method_isDisabled">isDisabled()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd></dd>
+<dd>Check plugin is disabled</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/IsaEken-PluginSystem-Traits-PluginManageableTrait.html#method_isEnabled">isEnabled()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd></dd>
+<dd>Check plugin is enabled</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/IsaEken-PluginSystem-Traits-PluginManageableTrait.html#method_toggle">toggle()</a>
     <span>
                         &nbsp;: $this    </span>
 </dt>
-<dd></dd>
+<dd>Toggle enabled state of plugin</dd>
 
         </dl>
 
@@ -163,10 +173,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/PluginManageableTrait.php"><a href="files/src-traits-pluginmanageabletrait.html"><abbr title="src/Traits/PluginManageableTrait.php">PluginManageableTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Disable plugin</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">disable</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
@@ -175,21 +186,6 @@
 
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/IsaEken-PluginSystem-Exceptions-PluginNotFoundException.html"><abbr title="\IsaEken\PluginSystem\Exceptions\PluginNotFoundException">PluginNotFoundException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"></section>
-
-                                    </dd>
-                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">$this</span>
@@ -211,10 +207,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/PluginManageableTrait.php"><a href="files/src-traits-pluginmanageabletrait.html"><abbr title="src/Traits/PluginManageableTrait.php">PluginManageableTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Enable plugin</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">enable</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
@@ -223,21 +220,6 @@
 
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/IsaEken-PluginSystem-Exceptions-PluginNotFoundException.html"><abbr title="\IsaEken\PluginSystem\Exceptions\PluginNotFoundException">PluginNotFoundException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"></section>
-
-                                    </dd>
-                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">$this</span>
@@ -259,10 +241,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/PluginManageableTrait.php"><a href="files/src-traits-pluginmanageabletrait.html"><abbr title="src/Traits/PluginManageableTrait.php">PluginManageableTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">36</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Check plugin is disabled</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">isDisabled</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
@@ -271,21 +254,6 @@
 
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/IsaEken-PluginSystem-Exceptions-PluginNotFoundException.html"><abbr title="\IsaEken\PluginSystem\Exceptions\PluginNotFoundException">PluginNotFoundException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"></section>
-
-                                    </dd>
-                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
@@ -307,10 +275,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/PluginManageableTrait.php"><a href="files/src-traits-pluginmanageabletrait.html"><abbr title="src/Traits/PluginManageableTrait.php">PluginManageableTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Check plugin is enabled</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">isEnabled</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
@@ -319,21 +288,6 @@
 
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/IsaEken-PluginSystem-Exceptions-PluginNotFoundException.html"><abbr title="\IsaEken\PluginSystem\Exceptions\PluginNotFoundException">PluginNotFoundException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"></section>
-
-                                    </dd>
-                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
@@ -355,10 +309,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Traits/PluginManageableTrait.php"><a href="files/src-traits-pluginmanageabletrait.html"><abbr title="src/Traits/PluginManageableTrait.php">PluginManageableTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 </aside>
 
-    
+        <p class="phpdocumentor-summary">Toggle enabled state of plugin</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">toggle</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
@@ -367,21 +322,6 @@
 
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/IsaEken-PluginSystem-Exceptions-PluginNotFoundException.html"><abbr title="\IsaEken\PluginSystem\Exceptions\PluginNotFoundException">PluginNotFoundException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"></section>
-
-                                    </dd>
-                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">$this</span>
