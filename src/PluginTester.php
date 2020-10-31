@@ -1,12 +1,22 @@
 <?php
-
+/**
+ * Plugin Tester
+ * @version v1.0
+ * @author İsa Eken
+ * @license MIT
+ */
 
 namespace IsaEken\PluginSystem;
 
-
+/**
+ * Class PluginTester
+ * @package IsaEken\PluginSystem
+ */
 class PluginTester
 {
     /**
+     * Plugin file path
+     *
      * @var string|null
      */
     public ?string $plugin = null;
@@ -21,6 +31,8 @@ class PluginTester
     }
 
     /**
+     * Check plugin file is exists
+     *
      * @return bool
      */
     public function exists() : bool
@@ -29,6 +41,8 @@ class PluginTester
     }
 
     /**
+     * Check plugin class name is valid
+     *
      * @return bool
      */
     public function className() : bool
@@ -39,6 +53,8 @@ class PluginTester
     }
 
     /**
+     * Validate the plugin with everything
+     *
      * @return bool
      */
     public function validate() : bool
