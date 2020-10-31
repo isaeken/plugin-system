@@ -1,0 +1,28 @@
+{
+    "name": "isaeken/plugin-system",
+    "type": "library",
+    "description": "Plugin support and management library for your project",
+    "keywords": ["plugin", "extension", "support", "management"],
+    "homepage": "https://www.isaeken.com.tr",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "isaeken",
+            "email": "hello@isaeken.com.tr",
+            "homepage": "https://www.isaeken.com.tr",
+            "role": "Founder"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "IsaEken\\PluginSystem\\": "src"
+        }
+    },
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.1",
+        "phpunit/phpunit": "^9.4"
+    }
+}
