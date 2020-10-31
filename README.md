@@ -1,5 +1,5 @@
 
-# Password Generator
+# Plugin System
 ![CircleCI](https://img.shields.io/circleci/build/github/isaeken/plugin-system?label=CircleCI) ![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/github/isaeken/plugin-system) ![Packagist License](https://img.shields.io/packagist/l/isaeken/plugin-system) ![Packagist Version](https://img.shields.io/packagist/v/isaeken/plugin-system)
 
 Plugin system and management package for your projects.  
