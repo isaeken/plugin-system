@@ -1,33 +1,49 @@
 <?php
-
+/**
+ * Plugin System
+ * @version v1.0
+ * @author İsa Eken
+ * @license MIT
+ */
 
 namespace IsaEken\PluginSystem;
-
 
 use IsaEken\PluginSystem\Exceptions\AttributeNotExistsException;
 use IsaEken\PluginSystem\Traits\PluginManageableTrait;
 use stdClass;
 
+/**
+ * Class Plugin
+ * @package IsaEken\PluginSystem
+ */
 abstract class Plugin
 {
     use PluginManageableTrait;
 
     /**
+     * Your plugins name
+     *
      * @var string $name
      */
     protected string $name;
 
     /**
+     * Your plugins description
+     *
      * @var string $description
      */
     protected string $description = '';
 
     /**
+     * Your plugins version
+     *
      * @var string $version
      */
     protected string $version = 'v1.0';
 
     /**
+     * Your plugins author
+     *
      * @var string $author
      */
     protected string $author = '';
@@ -43,6 +59,8 @@ abstract class Plugin
     }
 
     /**
+     * Fill attributes from array in plugin
+     *
      * @param array $attributes
      * @return Plugin
      * @throws AttributeNotExistsException
@@ -54,6 +72,8 @@ abstract class Plugin
     }
 
     /**
+     * Set attribute in plugin
+     *
      * @param string $key
      * @param $value
      * @return Plugin
@@ -67,6 +87,8 @@ abstract class Plugin
     }
 
     /**
+     * Get attribute from plugin
+     *
      * @param string $key
      * @return mixed
      */
@@ -76,6 +98,8 @@ abstract class Plugin
     }
 
     /**
+     * Execute method in plugin
+     *
      * @param string $name
      * @param array $arguments
      * @return object
@@ -83,8 +107,10 @@ abstract class Plugin
      */
     public function execute(string $name, array $arguments = []) : object
     {
+        // each all methods in plugin
         foreach (get_class_methods($this) as $index => $method)
         {
+            // check if method is requested
             if ($method === $name)
             {
                 $starts_at = microtime(true);
@@ -102,6 +128,8 @@ abstract class Plugin
                 return $result;
             }
         }
+
+        // requested method is not found
         return (object) [
             'enabled' => $this->isEnabled(),
             'success' => false,
