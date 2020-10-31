@@ -1,21 +1,32 @@
 <?php
-
+/**
+ * Plugin System
+ * @version v1.0
+ * @author İsa Eken
+ * @license MIT
+ */
 
 namespace IsaEken\PluginSystem\Traits;
 
-
 use IsaEken\PluginSystem\Helpers\Str;
 use IsaEken\PluginSystem\Plugin;
-use IsaEken\PluginSystem\PluginSystem;
 
+/**
+ * Trait PluginsTrait
+ * @package IsaEken\PluginSystem\Traits
+ */
 trait PluginsTrait
 {
     /**
+     * Plugins directory
+     *
      * @var string $directory
      */
     public string $directory;
 
     /**
+     * Plugins
+     *
      * @var array $plugins
      */
     public array $plugins = [];
@@ -32,6 +43,8 @@ trait PluginsTrait
     }
 
     /**
+     * Add plugin to memory
+     *
      * @param Plugin $plugin
      * @return $this
      */
@@ -42,6 +55,8 @@ trait PluginsTrait
     }
 
     /**
+     * Remove plugin from memory
+     *
      * @param Plugin $plugin
      * @return $this
      */
@@ -54,21 +69,34 @@ trait PluginsTrait
     }
 
     /**
+     * Load all plugins in a directory
+     *
      * @param string|null $directory
      * @return $this
      */
     public function autoload(?string $directory = null)
     {
         if ($directory != null) $this->directory = $directory;
+
+        // all all files in directory
         foreach (scandir($this->directory) as $plugin)
+            // check file is a php file
             if (Str::endsWith($plugin, '.php'))
             {
                 $filename = realpath($this->directory.DIRECTORY_SEPARATOR.$plugin);
+
+                // load plugin from filename
                 $plugin = $this->load($filename);
+
+                // set plugin variables
                 $plugin->filename = $filename;
                 $plugin->enabled = $plugin->isEnabled();
+
+                // add plugin to memory
                 $this->add($plugin);
             }
+
+        // return $this for chained functions
         return $this;
     }
 }
