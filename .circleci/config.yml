@@ -1,19 +1,24 @@
 version: 2
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
+
 jobs:
   build:
     docker:
-      - image: circleci/php:7.4-node-browsers
+      - image: circleci/php:7.4-cli
     steps:
       - checkout
-      - run: sudo apt update # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
-      - run: sudo docker-php-ext-install zip
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "composer.json" }}
-      - run: composer install -n --prefer-dist
-      - save_cache:
-          key: v1-dependencies-{{ checksum "composer.json" }}
-          paths:
-            - ./vendor
-      - run: composer install
-      - run: ./vendor/bin/phpunit
+      - run:
+          name: Install Composer dependencies
+          command: |
+            sudo composer self-update
+            composer install -n --prefer-dist
+            composer dump-autoload --optimize
+      - run:
+          name: Run unit tests
+          command: |
+            php ./vendor/bin/phpunit --stop-on-error --stop-on-failture
