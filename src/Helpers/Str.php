@@ -38,4 +38,17 @@ class Str
         if (!strlen($needle)) return true;
         return substr($haystack, -strlen($needle)) === $needle;
     }
+
+    /**
+     * Convert to array and get last.
+     *
+     * @param string $string
+     * @param string $separator
+     * @return string
+     */
+    public static function afterLast(string $string, string $separator = '.'): string
+    {
+        $exploded = explode($separator, $string);
+        return $exploded[count($exploded) - 1];
+    }
 }

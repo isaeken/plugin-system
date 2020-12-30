@@ -103,31 +103,55 @@ trait PluginsTrait
      * Load all plugins in a directory
      *
      * @param string|null $directory
+     * @param bool $nested
      * @return $this
      */
-    public function autoload(?string $directory = null)
+    public function autoload(?string $directory = null, bool $nested = true)
     {
         if ($directory != null) $this->directory = $directory;
 
-        // all all files in directory
-        foreach (scandir($this->directory) as $plugin)
-            // check file is a php file
-            if (Str::endsWith($plugin, '.php'))
-            {
-                $filename = realpath($this->directory.DIRECTORY_SEPARATOR.$plugin);
-
-                // load plugin from filename
-                $plugin = $this->load($filename);
-
-                // set plugin variables
-                $plugin->filename = $filename;
-                $plugin->enabled = $plugin->isEnabled();
-
-                // add plugin to memory
-                $this->add($plugin);
-            }
+        // load plugins
+        $this->autoloadDirectory($this->directory, $nested, '');
 
         // return $this for chained functions
         return $this;
+    }
+
+    public function autoloadDirectory(string $directory, bool $nested = true, string $prefix = '')
+    {
+        foreach (scandir($directory) as $path) {
+            if ($path == '.' || $path == '..') {
+                continue;
+            }
+
+            $path = implode(DIRECTORY_SEPARATOR, [$directory, $path]);
+
+            if (is_file($path)) {
+                $this->autoloadPlugin($path);
+            }
+            else if (is_dir($path)) {
+                $prefix = $prefix.Str::afterLast($path, DIRECTORY_SEPARATOR);
+                $this->autoloadDirectory($path, $nested, $prefix);
+            }
+        }
+    }
+
+    private function autoloadPlugin(string $plugin)
+    {
+        // check file is a php file
+        if (Str::endsWith($plugin, '.php'))
+        {
+            $filename = $plugin;
+
+            // load plugin from filename
+            $plugin = $this->load($filename);
+
+            // set plugin variables
+            $plugin->filename = $filename;
+            $plugin->enabled = $plugin->isEnabled();
+
+            // add plugin to memory
+            $this->add($plugin);
+        }
     }
 }
