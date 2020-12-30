@@ -98,6 +98,33 @@ abstract class Plugin
     }
 
     /**
+     * Check plugin method is exists
+     *
+     * @param string $name
+     * @return bool
+     */
+    public function hasMethod(string $name): bool
+    {
+        foreach (get_class_methods($this) as $index => $method) {
+            if ($method === $name) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Check plugin method is exists
+     *
+     * @param string $name
+     * @return bool
+     */
+    public function hasFunction(string $name): bool
+    {
+        return $this->hasMethod($name);
+    }
+
+    /**
      * Execute method in plugin
      *
      * @param string $name
