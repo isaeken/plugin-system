@@ -51,4 +51,15 @@ class Str
         $exploded = explode($separator, $string);
         return $exploded[count($exploded) - 1];
     }
+
+    /**
+     * Explode string on upper case characters
+     *
+     * @param string $string
+     * @return array
+     */
+    public static function splitAtUpperCase(string $string): array
+    {
+        return preg_split('/(?=[A-Z])/', $string, -1, PREG_SPLIT_NO_EMPTY);
+    }
 }

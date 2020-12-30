@@ -9,6 +9,7 @@
 namespace IsaEken\PluginSystem;
 
 use IsaEken\PluginSystem\Exceptions\AttributeNotExistsException;
+use IsaEken\PluginSystem\Helpers\Str;
 use IsaEken\PluginSystem\Traits\PluginManageableTrait;
 use stdClass;
 
@@ -21,11 +22,18 @@ abstract class Plugin
     use PluginManageableTrait;
 
     /**
-     * Your plugins name
+     * Your plugins unique name
      *
      * @var string $name
      */
     protected string $name;
+
+    /**
+     * Your plugins readable name
+     *
+     * @var string $title
+     */
+    protected string $title;
 
     /**
      * Your plugins description
@@ -94,7 +102,10 @@ abstract class Plugin
      */
     public function getAttribute(string $key)
     {
-        return $this->{$key};
+        if (isset($this->{$key})) {
+            return $this->{$key};
+        }
+        return null;
     }
 
     /**
@@ -125,29 +136,11 @@ abstract class Plugin
     }
 
     /**
-     * @param string $name
-     * @param mixed $arguments
-     * @return mixed
-     */
-    public function __call(string $name, $arguments)
-    {
-        $pluginMethods = ['name', 'description', 'version', 'author'];
-        if (in_array($name, $pluginMethods)) {
-            if (isset($this->$name)) {
-                return $this->name;
-            }
-            return '';
-        }
-        return $this->$name($arguments);
-    }
-
-    /**
      * Execute method in plugin
      *
      * @param string $name
      * @param array $arguments
      * @return object
-     * @throws Exceptions\PluginNotFoundException
      */
     public function execute(string $name, array $arguments = []) : object
     {

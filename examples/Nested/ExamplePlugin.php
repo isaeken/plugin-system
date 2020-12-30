@@ -1,12 +1,21 @@
 <?php
+namespace Nested;
+
 class ExamplePlugin extends \IsaEken\PluginSystem\Plugin
 {
     /**
-     * Your plugin name.
+     * Your plugin unique name.
      *
      * @var string $name
      */
-    public string $name = 'isaeken/example_plugin';
+    public string $name = 'isaeken/example_plugin2';
+
+    /**
+     * Your plugin readable name.
+     *
+     * @var string $title
+     */
+    public string $title = 'Example Plugin 2';
 
     /**
      * Your plugin description
@@ -29,17 +38,4 @@ class ExamplePlugin extends \IsaEken\PluginSystem\Plugin
      * @var string $version
      */
     protected string $version = 'v1.0';
-
-    /**
-     * example function
-     *
-     * @return string
-     */
-    public function helloWorld()
-    {
-        return 'Hello world from: '.__CLASS__;
-    }
 }
-
-// optional
-return ExamplePlugin::class;
