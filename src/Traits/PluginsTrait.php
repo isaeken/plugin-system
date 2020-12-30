@@ -13,6 +13,9 @@ use IsaEken\PluginSystem\Plugin;
 
 /**
  * Trait PluginsTrait
+ *
+ * @property $enabledPlugins
+ * @property $disabledPlugins
  * @package IsaEken\PluginSystem\Traits
  */
 trait PluginsTrait
@@ -66,6 +69,34 @@ trait PluginsTrait
             return $_plugin != $plugin;
         });
         return $this;
+    }
+
+    /**
+     * @param $name
+     * @return array
+     */
+    public function __get($name)
+    {
+        if ($name === 'enabledPlugins' || $name === 'disabledPlugins') {
+            $enabledPlugins = [];
+            $disabledPlugins = [];
+
+            foreach ($this->plugins as $plugin) {
+                if ($plugin->isEnabled()) {
+                    array_push($enabledPlugins, $plugin);
+                }
+                else {
+                    array_push($disabledPlugins, $plugin);
+                }
+            }
+
+            if ($name === 'disabledPlugins') {
+                return $disabledPlugins;
+            }
+
+            return $enabledPlugins;
+        }
+        return $this->$name;
     }
 
     /**

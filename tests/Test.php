@@ -73,4 +73,10 @@ class Test extends TestCase
             }
         }
     }
+
+    public function testGetEnabledDisabledPlugins()
+    {
+        $this->assertIsArray($this->pluginSystem->enabledPlugins);
+        $this->assertIsArray($this->pluginSystem->disabledPlugins);
+    }
 }
