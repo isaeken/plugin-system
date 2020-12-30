@@ -22,7 +22,6 @@ trait PluginsManager
      *
      * @param Plugin $plugin
      * @return Plugin
-     * @throws PluginNotFoundException
      */
     public function enable(Plugin $plugin)
     {
@@ -46,7 +45,6 @@ trait PluginsManager
      *
      * @param Plugin $plugin
      * @return Plugin
-     * @throws PluginNotFoundException
      */
     public function toggle(Plugin $plugin)
     {
@@ -58,7 +56,6 @@ trait PluginsManager
      *
      * @param Plugin $plugin
      * @return bool
-     * @throws PluginNotFoundException
      */
     public function isEnabled(Plugin $plugin) : bool
     {
@@ -70,7 +67,6 @@ trait PluginsManager
      *
      * @param Plugin $plugin
      * @return bool
-     * @throws PluginNotFoundException
      */
     public function isDisabled(Plugin $plugin) : bool
     {
