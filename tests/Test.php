@@ -52,4 +52,13 @@ class Test extends TestCase
 
         $this->assertTrue($successDisable && $successEnable);
     }
+
+    public function testHasMethods()
+    {
+        foreach ($this->pluginSystem->plugins as $plugin) {
+            $result = $plugin->hasMethod('helloWorld');
+            $this->assertTrue($result);
+            $this->assertEquals($plugin->hasFunction('helloWorld'), $result);
+        }
+    }
 }
