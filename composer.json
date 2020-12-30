@@ -1,5 +1,6 @@
 {
     "name": "isaeken/plugin-system",
+    "version": "1.3",
     "type": "library",
     "description": "Plugin support and management library for your project",
     "keywords": ["plugin", "extension", "support", "management"],
