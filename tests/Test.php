@@ -61,4 +61,16 @@ class Test extends TestCase
             $this->assertEquals($plugin->hasFunction('helloWorld'), $result);
         }
     }
+
+    public function testCallMethod()
+    {
+        foreach ($this->pluginSystem->plugins as $plugin) {
+            try {
+                $plugin->helloWorld();
+                $this->assertTrue(true);
+            } catch (Exception $exception) {
+                $this->assertTrue(false);
+            }
+        }
+    }
 }

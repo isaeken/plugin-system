@@ -125,6 +125,23 @@ abstract class Plugin
     }
 
     /**
+     * @param string $name
+     * @param mixed $arguments
+     * @return mixed
+     */
+    public function __call(string $name, $arguments)
+    {
+        $pluginMethods = ['name', 'description', 'version', 'author'];
+        if (in_array($name, $pluginMethods)) {
+            if (isset($this->$name)) {
+                return $this->name;
+            }
+            return '';
+        }
+        return $this->$name($arguments);
+    }
+
+    /**
      * Execute method in plugin
      *
      * @param string $name
