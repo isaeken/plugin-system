@@ -1,21 +1,17 @@
 <?php
+
 namespace Nested;
 
-class ExamplePlugin extends \IsaEken\PluginSystem\Plugin
+use IsaEken\PluginSystem\Plugin;
+
+class NestedPlugin extends Plugin
 {
     /**
      * Your plugin unique name.
      *
      * @var string $name
      */
-    public string $name = 'isaeken/example_plugin2';
-
-    /**
-     * Your plugin readable name.
-     *
-     * @var string $title
-     */
-    public string $title = 'Example Plugin 2';
+    public string $name = 'isaeken/nested_plugin';
 
     /**
      * Your plugin description
@@ -39,3 +35,5 @@ class ExamplePlugin extends \IsaEken\PluginSystem\Plugin
      */
     protected string $version = 'v1.0';
 }
+
+return NestedPlugin::class;

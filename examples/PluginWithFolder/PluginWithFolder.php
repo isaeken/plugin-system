@@ -1,5 +1,8 @@
 <?php
-class PluginWithFolder extends \IsaEken\PluginSystem\Plugin
+
+use IsaEken\PluginSystem\Plugin;
+
+class PluginWithFolder extends Plugin
 {
     /**
      * Your plugin name.

@@ -1,10 +1,19 @@
 <?php
-class HelloWorldPlugin extends \IsaEken\PluginSystem\Plugin
+
+use IsaEken\PluginSystem\Plugin;
+
+class HelloWorldPlugin extends Plugin
 {
+    /**
+     * @var string $name
+     */
     public string $name = 'isaeken/hello_world_plugin';
 
-    public function helloWorld()
+    /**
+     * @return string
+     */
+    public function helloWorld(): string
     {
-        return 'Hello world from: '.__CLASS__;
+        return 'Hello world from: ' . __CLASS__;
     }
 }
