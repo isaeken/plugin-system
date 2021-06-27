@@ -1,12 +1,12 @@
 <?php
-class ExamplePlugin extends \IsaEken\PluginSystem\Plugin
+class PluginWithFolder extends \IsaEken\PluginSystem\Plugin
 {
     /**
      * Your plugin name.
      *
      * @var string $name
      */
-    public string $name = 'isaeken/example_plugin';
+    public string $name = 'isaeken/plugin_with_folder';
 
     /**
      * Your plugin description
@@ -42,4 +42,4 @@ class ExamplePlugin extends \IsaEken\PluginSystem\Plugin
 }
 
 // optional
-return ExamplePlugin::class;
+return PluginWithFolder::class;

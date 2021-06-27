@@ -8,8 +8,10 @@
 
 namespace IsaEken\PluginSystem;
 
+use Exception;
 use IsaEken\PluginSystem\Exceptions\AttributeNotExistsException;
 use IsaEken\PluginSystem\Helpers\Str;
+use IsaEken\PluginSystem\Interfaces\PluginInterface;
 use IsaEken\PluginSystem\Traits\PluginManageableTrait;
 use stdClass;
 
@@ -17,9 +19,12 @@ use stdClass;
  * Class Plugin
  * @package IsaEken\PluginSystem
  */
-abstract class Plugin
+abstract class Plugin implements PluginInterface
 {
-    use PluginManageableTrait;
+    /**
+     * @var string $filename
+     */
+    protected string $filename;
 
     /**
      * Your plugins unique name
@@ -27,13 +32,6 @@ abstract class Plugin
      * @var string $name
      */
     protected string $name;
-
-    /**
-     * Your plugins readable name
-     *
-     * @var string $title
-     */
-    protected string $title;
 
     /**
      * Your plugins description
@@ -57,82 +55,119 @@ abstract class Plugin
     protected string $author = '';
 
     /**
-     * Plugin constructor.
-     * @param array $attributes
-     * @throws AttributeNotExistsException
+     * @return string
      */
-    public function __construct(array $attributes = [])
+    public function getFilename(): string
     {
-        $this->fill($attributes);
+        return $this->filename;
     }
 
     /**
-     * Fill attributes from array in plugin
-     *
-     * @param array $attributes
-     * @return Plugin
-     * @throws AttributeNotExistsException
+     * @param string $filename
+     * @return $this
      */
-    public function fill(array $attributes) : Plugin
+    public function setFilename(string $filename): static
     {
-        foreach ($attributes as $key => $value) $this->setAttribute($key, $value);
+        $this->filename = $filename;
         return $this;
     }
 
     /**
-     * Set attribute in plugin
-     *
-     * @param string $key
-     * @param $value
-     * @return Plugin
-     * @throws AttributeNotExistsException
+     * @return string
      */
-    public function setAttribute(string $key, $value) : Plugin
+    public function getName(): string
     {
-        if (!isset($this->{$key})) throw new AttributeNotExistsException;
-        $this->{$key} = $value;
-        return $this;
+        return $this->name;
     }
 
     /**
-     * Get attribute from plugin
-     *
-     * @param string $key
-     * @return mixed
+     * @return string
      */
-    public function getAttribute(string $key)
+    public function getDescription(): string
     {
-        if (isset($this->{$key})) {
-            return $this->{$key};
-        }
-        return null;
+        return $this->description;
     }
 
     /**
-     * Check plugin method is exists
-     *
-     * @param string $name
+     * @return string
+     */
+    public function getVersion(): string
+    {
+        return $this->version;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAuthor(): string
+    {
+        return $this->author;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUid(): string
+    {
+        return sprintf(
+            '%s/%s:%s',
+            $this->getAuthor(),
+            $this->getName(),
+            $this->getVersion(),
+        );
+    }
+
+    /**
      * @return bool
      */
-    public function hasMethod(string $name): bool
+    public function isEnabled(): bool
     {
-        foreach (get_class_methods($this) as $index => $method) {
-            if ($method === $name) {
-                return true;
-            }
-        }
-        return false;
+        $filename = pathinfo($this->getFilename())['dirname'] . DIRECTORY_SEPARATOR . explode('.', pathinfo($this->getFilename())['filename'])[0];
+        return file_exists($filename . '.php');
     }
 
     /**
-     * Check plugin method is exists
-     *
-     * @param string $name
      * @return bool
      */
-    public function hasFunction(string $name): bool
+    public function isDisabled(): bool
     {
-        return $this->hasMethod($name);
+        return ! $this->isEnabled();
+    }
+
+    /**
+     * @return $this
+     */
+    public function enable(): static
+    {
+        $filename = pathinfo($this->getFilename())['dirname'] . DIRECTORY_SEPARATOR . explode('.', pathinfo($this->getFilename())['filename'])[0];
+
+        if ($this->isDisabled()) {
+            rename($filename . '.disabled.php', $filename . '.php');
+        }
+
+        return $this->setFilename($filename . '.php');
+    }
+
+    /**
+     * @return $this
+     */
+    public function disable(): static
+    {
+        $filename = pathinfo($this->getFilename())['dirname'] . DIRECTORY_SEPARATOR . pathinfo($this->getFilename())['filename'];
+
+        if ($this->isEnabled()) {
+            rename($filename . '.php', $filename . '.disabled.php');
+        }
+
+        return $this->setFilename($filename . '.disabled.php');
+    }
+
+    /**
+     * @return $this
+     */
+    public function toggle(): static
+    {
+        return $this->isEnabled() ? $this->disable() : $this->enable();
     }
 
     /**
@@ -140,41 +175,41 @@ abstract class Plugin
      *
      * @param string $name
      * @param array $arguments
-     * @return object
+     * @return ExecutionData
      */
-    public function execute(string $name, array $arguments = []) : object
+    public function execute(string $name, ...$arguments): ExecutionData
     {
+        $arguments = func_get_args();
+        unset($arguments[0]);
+
         // each all methods in plugin
         foreach (get_class_methods($this) as $index => $method)
         {
             // check if method is requested
             if ($method === $name)
             {
-                $starts_at = microtime(true);
+                $started_at = microtime(true);
 
-                $result = new stdClass;
-                $result->enabled = $this->isEnabled();
-                $result->success = true;
-                $result->class = $this;
-                $result->function = $name;
-                $result->arguments = $arguments;
-                $result->return = call_user_func_array(array($this, $name), $arguments);
+                $data = new ExecutionData;
+                $data->plugin = $this;
+                $data->method = $name;
+                $data->arguments = $arguments;
 
-                $ends_at = microtime(true);
-                $result->executed_seconds = ($ends_at - $starts_at);
-                return $result;
+                try {
+                    $data->return = call_user_func_array(array($this, $name), $arguments);
+                    $data->success = true;
+                }
+                catch (Exception $exception) {
+                    $data->exception = $exception;
+                    $data->success = false;
+                }
+
+                $data->execution_time = (microtime(true) - $started_at);
+                return $data;
             }
         }
 
         // requested method is not found
-        return (object) [
-            'enabled' => $this->isEnabled(),
-            'success' => false,
-            'class' => $this,
-            'function' => $name,
-            'arguments' => $arguments,
-            'return' => null,
-            'executed_seconds' => 0,
-        ];
+        return new ExecutionData;
     }
 }

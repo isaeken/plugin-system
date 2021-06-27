@@ -34,7 +34,9 @@
         }
     },
     "require": {
-        "php": "^7.4|^8.0"
+        "php": "^8.0",
+        "composer/semver": "^3.2",
+        "illuminate/support": "^8.48"
     },
     "require-dev": {
         "symfony/var-dumper": "^5.1",
