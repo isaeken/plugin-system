@@ -16,18 +16,45 @@ Make and add own plugins to your script and make it flexible
 - Enable, disable or load plugins in runtime
 - Detailed execution info like extension function executed seconds
 
-
-## Roadmap
-
-- Laravel integration
-
-
 ## Installation
 
 Install plugin-system with composer
 
 ```bash 
   composer require isaeken/plugin-system
+```
+
+## Installation in Laravel
+
+Install plugin-system with composer
+
+```bash 
+  composer require isaeken/plugin-system
+```
+
+Publish configuration file
+
+```bash
+php artisan vendor:publish --provider="IsaEken\PluginSystem\PluginSystemServiceProvider"
+```
+
+Set your configuration
+
+```php
+// config/plugins.php
+<?php
+
+return [
+    'directory' => base_path('plugins'),
+    'nested' => false,
+    'folders' => true,
+];
+```
+
+(Optionally)
+Add provider to ``config/app.php``
+```php
+\IsaEken\PluginSystem\PluginSystemServiceProvider::class
 ```
 
 ## Example
@@ -40,6 +67,13 @@ if (! $pluginSystem->execute('hello_world')) {
 }
 ```
 
+### In Laravel
+
+```php
+if (! app()->plugins->execute('hello_world')) {
+    return 'some plugins given an error.';
+}
+```
 
 ## Running Tests
 
