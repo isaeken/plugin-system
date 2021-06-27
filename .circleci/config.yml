@@ -9,7 +9,7 @@ workflows:
 jobs:
   build:
     docker:
-      - image: circleci/php:7.4-cli
+      - image: circleci/php:8.0-cli
     steps:
       - checkout
       - run:
