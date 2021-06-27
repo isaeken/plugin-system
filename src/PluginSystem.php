@@ -10,14 +10,26 @@ use InvalidArgumentException;
 use IsaEken\PluginSystem\Exceptions\PluginNotFoundException;
 use IsaEken\PluginSystem\Interfaces\PluginInterface;
 
+/**
+ * Class PluginSystem
+ *
+ * @package IsaEken\PluginSystem
+ * @property Collection $plugins
+ * @property Collection $enabledPlugins
+ * @property Collection $disabledPlugins
+ */
 class PluginSystem
 {
     /**
+     * Plugins memory cache.
+     *
      * @var Collection $plugins
      */
     private Collection $plugins;
 
     /**
+     * Find plugin in loaded plugins.
+     *
      * @param PluginInterface|string $plugin
      * @return PluginInterface
      * @throws PluginNotFoundException
@@ -53,6 +65,7 @@ class PluginSystem
     public function __get(string $name)
     {
         $methods = [
+            'plugins',
             'enabledPlugins',
             'disabledPlugins',
         ];
@@ -65,6 +78,8 @@ class PluginSystem
     }
 
     /**
+     * Get the plugins base directory.
+     *
      * @return string
      */
     public function getDirectory(): string
@@ -73,6 +88,8 @@ class PluginSystem
     }
 
     /**
+     * Set the plugins base directory.
+     *
      * @param string $directory
      * @return PluginSystem
      */
@@ -83,6 +100,8 @@ class PluginSystem
     }
 
     /**
+     * Get all plugins.
+     *
      * @return Collection
      */
     public function plugins(): Collection
@@ -91,6 +110,8 @@ class PluginSystem
     }
 
     /**
+     * Get enabled plugins.
+     *
      * @return Collection
      */
     public function enabledPlugins(): Collection
@@ -108,6 +129,8 @@ class PluginSystem
     }
 
     /**
+     * Get disabled plugins.
+     *
      * @return Collection
      */
     public function disabledPlugins(): Collection
@@ -125,6 +148,8 @@ class PluginSystem
     }
 
     /**
+     * Add a plugin.
+     *
      * @param PluginInterface $plugin
      * @return $this
      */
@@ -135,8 +160,10 @@ class PluginSystem
     }
 
     /**
+     * Remove a specific plugin.
+     *
      * @param PluginInterface $plugin
-     * @return $this
+     * @return static
      */
     public function remove(PluginInterface $plugin): static
     {
@@ -182,10 +209,12 @@ class PluginSystem
     }
 
     /**
+     * Autoload all plugins in a directory.
+     *
      * @param string|null $directory
      * @param bool $nested
      * @param bool $folders
-     * @return $this
+     * @return static
      * @throws PluginNotFoundException
      */
     public function autoload(string $directory = null, bool $nested = false, bool $folders = false): static
@@ -232,8 +261,10 @@ class PluginSystem
     }
 
     /**
+     * Enable the specific plugin.
+     *
      * @param PluginInterface|string $plugin
-     * @return $this
+     * @return static
      * @throws PluginNotFoundException
      */
     public function enable(PluginInterface|string $plugin): static
@@ -243,8 +274,10 @@ class PluginSystem
     }
 
     /**
+     * Disable the specific plugin.
+     *
      * @param PluginInterface|string $plugin
-     * @return $this
+     * @return static
      * @throws PluginNotFoundException
      */
     public function disable(PluginInterface|string $plugin): static
@@ -254,8 +287,10 @@ class PluginSystem
     }
 
     /**
+     * Toggle plugin enable/disable state.
+     *
      * @param PluginInterface|string $plugin
-     * @return $this
+     * @return static
      * @throws PluginNotFoundException
      */
     public function toggle(PluginInterface|string $plugin): static
@@ -265,6 +300,8 @@ class PluginSystem
     }
 
     /**
+     * Check the plugin is enabled.
+     *
      * @param PluginInterface|string $plugin
      * @return bool
      * @throws PluginNotFoundException
@@ -275,6 +312,8 @@ class PluginSystem
     }
 
     /**
+     * Check the plugin is disabled.
+     *
      * @param PluginInterface|string $plugin
      * @return bool
      * @throws PluginNotFoundException
@@ -285,6 +324,8 @@ class PluginSystem
     }
 
     /**
+     * Execute methods in loaded and enabled plugins.
+     *
      * @param string $name
      * @param ...$arguments
      * @return bool
