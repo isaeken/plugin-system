@@ -19,8 +19,6 @@ Make and add own plugins to your script and make it flexible
 
 ## Roadmap
 
-- Static autoloader generator like composer
-
 - Laravel integration
 
 
