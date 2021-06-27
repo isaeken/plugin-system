@@ -1,24 +1,12 @@
 <?php
-/**
- * Plugin System
- * @version v1.0
- * @author İsa Eken
- * @license MIT
- */
+
 
 namespace IsaEken\PluginSystem;
 
-use Exception;
-use IsaEken\PluginSystem\Exceptions\AttributeNotExistsException;
-use IsaEken\PluginSystem\Helpers\Str;
-use IsaEken\PluginSystem\Interfaces\PluginInterface;
-use IsaEken\PluginSystem\Traits\PluginManageableTrait;
-use stdClass;
 
-/**
- * Class Plugin
- * @package IsaEken\PluginSystem
- */
+use Exception;
+use IsaEken\PluginSystem\Interfaces\PluginInterface;
+
 abstract class Plugin implements PluginInterface
 {
     /**
@@ -45,17 +33,17 @@ abstract class Plugin implements PluginInterface
      *
      * @var string $version
      */
-    protected string $version = 'v1.0';
+    protected string $version = 'v1.0.0';
 
     /**
      * Your plugins author
      *
      * @var string $author
      */
-    protected string $author = '';
+    protected string $author = 'Unknown Author';
 
     /**
-     * @return string
+     * @inheritDoc
      */
     public function getFilename(): string
     {
@@ -63,8 +51,7 @@ abstract class Plugin implements PluginInterface
     }
 
     /**
-     * @param string $filename
-     * @return $this
+     * @inheritDoc
      */
     public function setFilename(string $filename): static
     {
@@ -73,7 +60,7 @@ abstract class Plugin implements PluginInterface
     }
 
     /**
-     * @return string
+     * @inheritDoc
      */
     public function getName(): string
     {
@@ -81,7 +68,7 @@ abstract class Plugin implements PluginInterface
     }
 
     /**
-     * @return string
+     * @inheritDoc
      */
     public function getDescription(): string
     {
@@ -89,7 +76,7 @@ abstract class Plugin implements PluginInterface
     }
 
     /**
-     * @return string
+     * @inheritDoc
      */
     public function getVersion(): string
     {
@@ -97,7 +84,7 @@ abstract class Plugin implements PluginInterface
     }
 
     /**
-     * @return string
+     * @inheritDoc
      */
     public function getAuthor(): string
     {
@@ -105,7 +92,7 @@ abstract class Plugin implements PluginInterface
     }
 
     /**
-     * @return string
+     * @inheritDoc
      */
     public function getUid(): string
     {
@@ -118,7 +105,7 @@ abstract class Plugin implements PluginInterface
     }
 
     /**
-     * @return bool
+     * @inheritDoc
      */
     public function isEnabled(): bool
     {
@@ -127,7 +114,7 @@ abstract class Plugin implements PluginInterface
     }
 
     /**
-     * @return bool
+     * @inheritDoc
      */
     public function isDisabled(): bool
     {
@@ -135,7 +122,7 @@ abstract class Plugin implements PluginInterface
     }
 
     /**
-     * @return $this
+     * @inheritDoc
      */
     public function enable(): static
     {
@@ -149,7 +136,7 @@ abstract class Plugin implements PluginInterface
     }
 
     /**
-     * @return $this
+     * @inheritDoc
      */
     public function disable(): static
     {
@@ -163,7 +150,7 @@ abstract class Plugin implements PluginInterface
     }
 
     /**
-     * @return $this
+     * @inheritDoc
      */
     public function toggle(): static
     {
@@ -171,11 +158,7 @@ abstract class Plugin implements PluginInterface
     }
 
     /**
-     * Execute method in plugin
-     *
-     * @param string $name
-     * @param array $arguments
-     * @return ExecutionData
+     * @inheritDoc
      */
     public function execute(string $name, ...$arguments): ExecutionData
     {
