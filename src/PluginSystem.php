@@ -28,6 +28,13 @@ class PluginSystem
     private Collection $plugins;
 
     /**
+     * Static plugin system.
+     *
+     * @var PluginSystem $system
+     */
+    private static PluginSystem $system;
+
+    /**
      * Find plugin in loaded plugins.
      *
      * @param PluginInterface|string $plugin
@@ -45,6 +52,23 @@ class PluginSystem
         }
 
         throw new PluginNotFoundException;
+    }
+
+    /**
+     * @return static
+     */
+    public function makeStatic(): static
+    {
+        static::$system = $this;
+        return $this;
+    }
+
+    /**
+     * @return static
+     */
+    public static function getInstance(): static
+    {
+        return static::$system;
     }
 
     /**

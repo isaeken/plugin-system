@@ -28,6 +28,12 @@ class GeneralTest extends TestCase
         $this->assertCount(2, static::pluginSystem()->plugins());
     }
 
+    public function testStatic()
+    {
+        static::pluginSystem()->makeStatic();
+        $this->assertEquals(static::pluginSystem(), PluginSystem::getInstance());
+    }
+
     public function testDisable()
     {
         static::pluginSystem()->plugins()->each(function (PluginInterface $plugin) {
