@@ -1,0 +1,48 @@
+<?php
+
+
+namespace {{ namespace }};
+
+
+use IsaEken\PluginSystem\Plugin;
+
+class {{ classname }} extends Plugin
+{
+    /**
+     * Your plugin name.
+     *
+     * @var string $name
+     */
+    public string $name = '{{ name }}';
+
+    /**
+     * Your plugin description.
+     *
+     * @var string $description
+     */
+    protected string $description = '{{ description }}';
+
+    /**
+     * Plugin author name.
+     *
+     * @var string $author
+     */
+    protected string $author = '{{ author }}';
+
+    /**
+     * Your plugin version.
+     *
+     * @var string $version
+     */
+    protected string $version = '{{ version }}';
+
+    /**
+     * @return string
+     */
+    public function ping()
+    {
+        return 'pong';
+    }
+}
+
+return {{ classname }}::class;
