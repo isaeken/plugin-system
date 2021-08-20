@@ -1,6 +1,8 @@
 
 # Plugin System
 
+![Plugin System](https://banners.beyondco.de/Plugin%20System.png?theme=light&packageManager=composer+require&packageName=isaeken%2Fplugin-system&pattern=architect&style=style_1&description=Make+plugins+to+your+script+and+make+it+flexible.&md=1&showWatermark=1&fontSize=100px&images=puzzle)
+
 Make and add own plugins to your script and make it flexible
 
 ![CircleCI](https://img.shields.io/circleci/build/github/isaeken/plugin-system)
