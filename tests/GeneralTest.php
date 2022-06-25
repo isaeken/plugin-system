@@ -13,7 +13,7 @@ class GeneralTest extends TestCase
     public static function pluginSystem(): PluginSystem
     {
         if (static::$pluginSystem === null) {
-            static::$pluginSystem = new PluginSystem(__DIR__ . '/../examples');
+            static::$pluginSystem = new PluginSystem(__DIR__.'/../examples');
         }
 
         return static::$pluginSystem;

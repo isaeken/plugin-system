@@ -1,8 +1,6 @@
 <?php
 
-
 namespace IsaEken\PluginSystem\Interfaces;
-
 
 use IsaEken\PluginSystem\ExecutionData;
 
@@ -46,7 +44,7 @@ interface PluginInterface
     /**
      * Set filename of the plugin.
      *
-     * @param string $filename
+     * @param  string  $filename
      * @return static
      */
     public function setFilename(string $filename): static;
@@ -96,7 +94,7 @@ interface PluginInterface
     /**
      * Execute method with arguments in the plugin.
      *
-     * @param string $name
+     * @param  string  $name
      * @param ...$arguments
      * @return ExecutionData
      */

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace IsaEken\PluginSystem;
-
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
@@ -13,7 +11,6 @@ use IsaEken\PluginSystem\Interfaces\PluginInterface;
 /**
  * Class PluginSystem
  *
- * @package IsaEken\PluginSystem
  * @property Collection $plugins
  * @property Collection $enabledPlugins
  * @property Collection $disabledPlugins
@@ -23,22 +20,23 @@ class PluginSystem
     /**
      * Plugins memory cache.
      *
-     * @var Collection $plugins
+     * @var Collection
      */
     private Collection $plugins;
 
     /**
      * Static plugin system.
      *
-     * @var PluginSystem $system
+     * @var PluginSystem
      */
     private static PluginSystem $system;
 
     /**
      * Find plugin in loaded plugins.
      *
-     * @param PluginInterface|string $plugin
+     * @param  PluginInterface|string  $plugin
      * @return PluginInterface
+     *
      * @throws PluginNotFoundException
      */
     private function findPlugin(PluginInterface|string $plugin): PluginInterface
@@ -51,7 +49,7 @@ class PluginSystem
             return $this->plugins->get($plugin);
         }
 
-        throw new PluginNotFoundException;
+        throw new PluginNotFoundException();
     }
 
     /**
@@ -60,6 +58,7 @@ class PluginSystem
     public function makeStatic(): static
     {
         static::$system = $this;
+
         return $this;
     }
 
@@ -74,8 +73,8 @@ class PluginSystem
     /**
      * PluginSystem constructor.
      *
-     * @param string $directory
-     * @param array $plugins
+     * @param  string  $directory
+     * @param  array  $plugins
      */
     public function __construct(public string $directory, array $plugins = [])
     {
@@ -83,7 +82,7 @@ class PluginSystem
     }
 
     /**
-     * @param string $name
+     * @param  string  $name
      * @return mixed
      */
     public function __get(string $name)
@@ -114,12 +113,13 @@ class PluginSystem
     /**
      * Set the plugins base directory.
      *
-     * @param string $directory
+     * @param  string  $directory
      * @return PluginSystem
      */
     public function setDirectory(string $directory): static
     {
         $this->directory = $directory;
+
         return $this;
     }
 
@@ -174,19 +174,20 @@ class PluginSystem
     /**
      * Add a plugin.
      *
-     * @param PluginInterface $plugin
+     * @param  PluginInterface  $plugin
      * @return $this
      */
     public function add(PluginInterface $plugin): static
     {
         $this->plugins->add($plugin);
+
         return $this;
     }
 
     /**
      * Remove a specific plugin.
      *
-     * @param PluginInterface $plugin
+     * @param  PluginInterface  $plugin
      * @return static
      */
     public function remove(PluginInterface $plugin): static
@@ -201,9 +202,10 @@ class PluginSystem
     /**
      * Load a plugin file
      *
-     * @param string $filename
-     * @param mixed ...$attributes
+     * @param  string  $filename
+     * @param  mixed  ...$attributes
      * @return PluginSystem
+     *
      * @throws PluginNotFoundException
      */
     public function load(string $filename, ...$attributes): static
@@ -226,19 +228,21 @@ class PluginSystem
             /** @var PluginInterface $plugin */
             $plugin = new $classname($attributes);
             $plugin->setFilename($filename);
+
             return $this->add($plugin);
         }
 
-        throw new PluginNotFoundException;
+        throw new PluginNotFoundException();
     }
 
     /**
      * Autoload all plugins in a directory.
      *
-     * @param string|null $directory
-     * @param bool $nested
-     * @param bool $folders
+     * @param  string|null  $directory
+     * @param  bool  $nested
+     * @param  bool  $folders
      * @return static
+     *
      * @throws PluginNotFoundException
      */
     public function autoload(string $directory = null, bool $nested = false, bool $folders = false): static
@@ -287,47 +291,54 @@ class PluginSystem
     /**
      * Enable the specific plugin.
      *
-     * @param PluginInterface|string $plugin
+     * @param  PluginInterface|string  $plugin
      * @return static
+     *
      * @throws PluginNotFoundException
      */
     public function enable(PluginInterface|string $plugin): static
     {
         $this->findPlugin($plugin)->enable();
+
         return $this;
     }
 
     /**
      * Disable the specific plugin.
      *
-     * @param PluginInterface|string $plugin
+     * @param  PluginInterface|string  $plugin
      * @return static
+     *
      * @throws PluginNotFoundException
      */
     public function disable(PluginInterface|string $plugin): static
     {
         $this->findPlugin($plugin)->disable();
+
         return $this;
     }
 
     /**
      * Toggle plugin enable/disable state.
      *
-     * @param PluginInterface|string $plugin
+     * @param  PluginInterface|string  $plugin
      * @return static
+     *
      * @throws PluginNotFoundException
      */
     public function toggle(PluginInterface|string $plugin): static
     {
         $this->findPlugin($plugin)->toggle();
+
         return $this;
     }
 
     /**
      * Check the plugin is enabled.
      *
-     * @param PluginInterface|string $plugin
+     * @param  PluginInterface|string  $plugin
      * @return bool
+     *
      * @throws PluginNotFoundException
      */
     public function isEnabled(PluginInterface|string $plugin): bool
@@ -338,8 +349,9 @@ class PluginSystem
     /**
      * Check the plugin is disabled.
      *
-     * @param PluginInterface|string $plugin
+     * @param  PluginInterface|string  $plugin
      * @return bool
+     *
      * @throws PluginNotFoundException
      */
     public function isDisabled(PluginInterface|string $plugin): bool
@@ -350,7 +362,7 @@ class PluginSystem
     /**
      * Execute methods in loaded and enabled plugins.
      *
-     * @param string $name
+     * @param  string  $name
      * @param ...$arguments
      * @return bool
      */

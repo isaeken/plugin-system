@@ -1,8 +1,6 @@
 <?php
 
-
 namespace IsaEken\PluginSystem;
-
 
 use Illuminate\Support\Facades\Facade;
 

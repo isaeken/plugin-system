@@ -1,8 +1,6 @@
 <?php
 
-
 namespace IsaEken\PluginSystem;
-
 
 use Exception;
 use IsaEken\PluginSystem\Interfaces\PluginInterface;
@@ -10,35 +8,35 @@ use IsaEken\PluginSystem\Interfaces\PluginInterface;
 abstract class Plugin implements PluginInterface
 {
     /**
-     * @var string $filename
+     * @var string
      */
     protected string $filename;
 
     /**
      * Your plugins unique name
      *
-     * @var string $name
+     * @var string
      */
     protected string $name;
 
     /**
      * Your plugins description
      *
-     * @var string $description
+     * @var string
      */
     protected string $description = '';
 
     /**
      * Your plugins version
      *
-     * @var string $version
+     * @var string
      */
     protected string $version = 'v1.0.0';
 
     /**
      * Your plugins author
      *
-     * @var string $author
+     * @var string
      */
     protected string $author = 'Unknown Author';
 
@@ -56,6 +54,7 @@ abstract class Plugin implements PluginInterface
     public function setFilename(string $filename): static
     {
         $this->filename = $filename;
+
         return $this;
     }
 
@@ -109,8 +108,9 @@ abstract class Plugin implements PluginInterface
      */
     public function isEnabled(): bool
     {
-        $filename = pathinfo($this->getFilename())['dirname'] . DIRECTORY_SEPARATOR . explode('.', pathinfo($this->getFilename())['filename'])[0];
-        return file_exists($filename . '.php');
+        $filename = pathinfo($this->getFilename())['dirname'].DIRECTORY_SEPARATOR.explode('.', pathinfo($this->getFilename())['filename'])[0];
+
+        return file_exists($filename.'.php');
     }
 
     /**
@@ -126,13 +126,13 @@ abstract class Plugin implements PluginInterface
      */
     public function enable(): static
     {
-        $filename = pathinfo($this->getFilename())['dirname'] . DIRECTORY_SEPARATOR . explode('.', pathinfo($this->getFilename())['filename'])[0];
+        $filename = pathinfo($this->getFilename())['dirname'].DIRECTORY_SEPARATOR.explode('.', pathinfo($this->getFilename())['filename'])[0];
 
         if ($this->isDisabled()) {
-            rename($filename . '.disabled.php', $filename . '.php');
+            rename($filename.'.disabled.php', $filename.'.php');
         }
 
-        return $this->setFilename($filename . '.php');
+        return $this->setFilename($filename.'.php');
     }
 
     /**
@@ -140,13 +140,13 @@ abstract class Plugin implements PluginInterface
      */
     public function disable(): static
     {
-        $filename = pathinfo($this->getFilename())['dirname'] . DIRECTORY_SEPARATOR . pathinfo($this->getFilename())['filename'];
+        $filename = pathinfo($this->getFilename())['dirname'].DIRECTORY_SEPARATOR.pathinfo($this->getFilename())['filename'];
 
         if ($this->isEnabled()) {
-            rename($filename . '.php', $filename . '.disabled.php');
+            rename($filename.'.php', $filename.'.disabled.php');
         }
 
-        return $this->setFilename($filename . '.disabled.php');
+        return $this->setFilename($filename.'.disabled.php');
     }
 
     /**
@@ -166,33 +166,31 @@ abstract class Plugin implements PluginInterface
         unset($arguments[0]);
 
         // each all methods in plugin
-        foreach (get_class_methods($this) as $index => $method)
-        {
+        foreach (get_class_methods($this) as $index => $method) {
             // check if method is requested
-            if ($method === $name)
-            {
+            if ($method === $name) {
                 $started_at = microtime(true);
 
-                $data = new ExecutionData;
+                $data = new ExecutionData();
                 $data->plugin = $this;
                 $data->method = $name;
                 $data->arguments = $arguments;
 
                 try {
-                    $data->return = call_user_func_array(array($this, $name), $arguments);
+                    $data->return = call_user_func_array([$this, $name], $arguments);
                     $data->success = true;
-                }
-                catch (Exception $exception) {
+                } catch (Exception $exception) {
                     $data->exception = $exception;
                     $data->success = false;
                 }
 
                 $data->execution_time = (microtime(true) - $started_at);
+
                 return $data;
             }
         }
 
         // requested method is not found
-        return new ExecutionData;
+        return new ExecutionData();
     }
 }

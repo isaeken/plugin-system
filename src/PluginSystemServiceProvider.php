@@ -1,8 +1,6 @@
 <?php
 
-
 namespace IsaEken\PluginSystem;
-
 
 use Illuminate\Support\ServiceProvider;
 
@@ -29,7 +27,7 @@ class PluginSystemServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/plugins.php' => config_path('plugins.php'),
+                __DIR__.'/../config/plugins.php' => config_path('plugins.php'),
             ], 'config');
         }
     }
@@ -41,6 +39,6 @@ class PluginSystemServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/plugins.php', 'plugins');
+        $this->mergeConfigFrom(__DIR__.'/../config/plugins.php', 'plugins');
     }
 }

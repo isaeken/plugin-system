@@ -1,8 +1,6 @@
 <?php
 
-
 namespace IsaEken\PluginSystem;
-
 
 use Exception;
 use Illuminate\Contracts\Support\Arrayable;
@@ -11,7 +9,7 @@ use IsaEken\PluginSystem\Interfaces\PluginInterface;
 
 /**
  * Class ExecutionData
- * @package IsaEken\PluginSystem
+ *
  * @property PluginInterface $plugin
  * @property bool $success
  * @property Exception|null $exception
@@ -23,14 +21,14 @@ use IsaEken\PluginSystem\Interfaces\PluginInterface;
 class ExecutionData implements Arrayable, Jsonable
 {
     /**
-     * @var object $attributes
+     * @var object
      */
     private object $attributes;
 
     /**
      * ExecutionData constructor.
      *
-     * @param array|object $attributes
+     * @param  array|object  $attributes
      */
     public function __construct(array|object $attributes = [])
     {
@@ -38,18 +36,19 @@ class ExecutionData implements Arrayable, Jsonable
     }
 
     /**
-     * @param string $name
-     * @param mixed $value
+     * @param  string  $name
+     * @param  mixed  $value
      * @return $this
      */
     public function setAttribute(string $name, mixed $value): static
     {
         $this->attributes->$name = $value;
+
         return $this;
     }
 
     /**
-     * @param string $name
+     * @param  string  $name
      * @return mixed
      */
     public function getAttribute(string $name): mixed
@@ -70,7 +69,7 @@ class ExecutionData implements Arrayable, Jsonable
     }
 
     /**
-     * @param string $name
+     * @param  string  $name
      * @return mixed
      */
     public function __get(string $name)
@@ -79,7 +78,7 @@ class ExecutionData implements Arrayable, Jsonable
     }
 
     /**
-     * @param string $name
+     * @param  string  $name
      * @param $value
      */
     public function __set(string $name, $value): void

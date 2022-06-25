@@ -9,16 +9,16 @@ class LoaderTest extends TestCase
 {
     public function testManualLoader()
     {
-        $pluginSystem = new PluginSystem(__DIR__ . '/../examples');
+        $pluginSystem = new PluginSystem(__DIR__.'/../examples');
 
         $this->assertCount(0, $pluginSystem->plugins());
-        $pluginSystem->load(__DIR__ . '/../examples/ExamplePlugin.php');
+        $pluginSystem->load(__DIR__.'/../examples/ExamplePlugin.php');
         $this->assertCount(1, $pluginSystem->plugins());
     }
 
     public function testNestedLoader()
     {
-        $pluginSystem = new PluginSystem(__DIR__ . '/../examples');
+        $pluginSystem = new PluginSystem(__DIR__.'/../examples');
 
         $this->assertCount(0, $pluginSystem->plugins());
         $pluginSystem->autoload(nested: true);
@@ -27,7 +27,7 @@ class LoaderTest extends TestCase
 
     public function testFolderLoader()
     {
-        $pluginSystem = new PluginSystem(__DIR__ . '/../examples');
+        $pluginSystem = new PluginSystem(__DIR__.'/../examples');
 
         $this->assertCount(0, $pluginSystem->plugins());
         $pluginSystem->autoload(folders: true);

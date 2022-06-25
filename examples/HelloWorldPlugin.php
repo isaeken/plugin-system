@@ -5,7 +5,7 @@ use IsaEken\PluginSystem\Plugin;
 class HelloWorldPlugin extends Plugin
 {
     /**
-     * @var string $name
+     * @var string
      */
     public string $name = 'isaeken/hello_world_plugin';
 
@@ -14,6 +14,6 @@ class HelloWorldPlugin extends Plugin
      */
     public function helloWorld(): string
     {
-        return 'Hello world from: ' . __CLASS__;
+        return 'Hello world from: '.__CLASS__;
     }
 }
