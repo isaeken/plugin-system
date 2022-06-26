@@ -10,7 +10,6 @@ it('is loading tests', function () {
     assertCount(2, $pluginSystem->getPlugins());
 });
 
-
 it('is executing custom methods', function () {
     $results = ['example plugin' => true, 'plugin pack' => 5];
 
