@@ -5,7 +5,7 @@
 
 Make and add own plugins to your script and make it flexible
 
-![CircleCI](https://img.shields.io/circleci/build/github/isaeken/plugin-system)
+[![run-tests](https://github.com/isaeken/plugin-system/actions/workflows/run-tests.yml/badge.svg)](https://github.com/isaeken/plugin-system/actions/workflows/run-tests.yml)
 ![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/github/isaeken/plugin-system)
 ![GitHub](https://img.shields.io/github/license/isaeken/plugin-system)
 ![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/isaeken/plugin-system)
