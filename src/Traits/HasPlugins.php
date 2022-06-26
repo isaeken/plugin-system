@@ -3,6 +3,7 @@
 namespace IsaEken\PluginSystem\Traits;
 
 use IsaEken\PluginSystem\Collections\PluginCollection;
+use IsaEken\PluginSystem\Contracts\Plugin;
 
 trait HasPlugins
 {
@@ -14,7 +15,7 @@ trait HasPlugins
     }
 
     /**
-     * @return PluginCollection
+     * @return PluginCollection<Plugin>
      */
     public function getPlugins(): PluginCollection
     {
@@ -22,7 +23,7 @@ trait HasPlugins
     }
 
     /**
-     * @param  PluginCollection  $plugins
+     * @param  PluginCollection<Plugin>  $plugins
      * @return self
      */
     public function setPlugins(PluginCollection $plugins): self
@@ -33,7 +34,7 @@ trait HasPlugins
     }
 
     /**
-     * @param  PluginCollection  $plugins
+     * @param  PluginCollection<Plugin>  $plugins
      * @return self
      */
     public static function usePlugins(PluginCollection $plugins): self
