@@ -13,10 +13,10 @@ Make and add own plugins to your script and make it flexible
 
 ## Features
 
-- Execute specific function for plugin or multiple plugins at the same time
-- Execute function with/without arguments
+- Execute specific function for plugin(s) at the synchronously
+- Execute methods using arguments
 - Enable, disable or load plugins in runtime
-- Detailed execution info like extension function executed seconds
+- Track method execution times
 
 ## Installation
 
@@ -26,15 +26,7 @@ Install plugin-system with composer
   composer require isaeken/plugin-system
 ```
 
-## Installation in Laravel
-
-Install plugin-system with composer
-
-```bash 
-  composer require isaeken/plugin-system
-```
-
-Publish configuration file
+### Publish service provider and configs (Laravel)
 
 ```bash
 php artisan vendor:publish --provider="IsaEken\PluginSystem\PluginSystemServiceProvider"
@@ -48,33 +40,27 @@ Set your configuration
 
 return [
     'directory' => base_path('plugins'),
-    'nested' => false,
-    'folders' => true,
+    'namespace' => '',
 ];
 ```
 
-(Optionally)
-Add provider to ``config/app.php``
+Add service provider to ``config/app.php``
 ```php
 \IsaEken\PluginSystem\PluginSystemServiceProvider::class
 ```
 
-## Example
+## Usage
 
 ```php
-$pluginSystem = new PluginSystem('/your/plugins/path');
-$pluginSystem->autoload();
-if (! $pluginSystem->execute('hello_world')) {
-    echo 'some plugins given an error.';
-}
+$pluginSystem = new \IsaEken\PluginSystem\PluginSystem();
+$pluginSystem->load(__DIR__ . '/plugins');
+$pluginSystem->handle();
 ```
 
-### In Laravel
+### Laravel
 
 ```php
-if (! app()->plugins->execute('hello_world')) {
-    return 'some plugins given an error.';
-}
+app('plugins')->handle();
 ```
 
 ## Running Tests
