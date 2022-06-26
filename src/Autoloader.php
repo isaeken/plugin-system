@@ -15,6 +15,16 @@ class Autoloader
 
     public PluginSystem|null $pluginSystem = null;
 
+    public function __construct()
+    {
+        foreach (class_uses($this) as $trait) {
+            $method = str($trait)->afterLast('\\')->prepend('boot')->value();
+            if (method_exists($trait, $method)) {
+                $this->{$method}();
+            }
+        }
+    }
+
     public function getPluginSystem(): PluginSystem|null
     {
         return $this->pluginSystem;
@@ -55,6 +65,8 @@ class Autoloader
                     'plugin' => $file,
                     'exception' => $exception,
                 ]);
+
+                throw $exception;
             }
 
             return null;
@@ -68,7 +80,9 @@ class Autoloader
 
             if ($file->endsWith('.php') && is_file($file)) {
                 if (($include = $includePlugin($file)) !== null) {
-                    $plugins = $plugins->merge($include);
+                    foreach ($include as $key => $plugin) {
+                        $plugins->put($key, $plugin);
+                    }
                 }
             }
         }
@@ -87,7 +101,10 @@ class Autoloader
             }
         }
 
-        $this->setPlugins($this->getPlugins()->merge($plugins)->unique());
+        foreach ($plugins as $key => $plugin) {
+            $this->getPlugins()->put($key, $plugin);
+        }
+
         $this->getPluginSystem()?->setPlugins($this->getPlugins());
 
         return $this;
