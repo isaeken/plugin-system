@@ -1,48 +1,19 @@
 <?php
 
-use IsaEken\PluginSystem\Plugin;
-
-class ExamplePlugin extends Plugin
+class ExamplePlugin extends IsaEken\PluginSystem\Plugin
 {
-    /**
-     * Your plugin name.
-     *
-     * @var string
-     */
-    public string $name = 'isaeken/example_plugin';
+    protected string $name = 'example plugin';
 
     /**
-     * Your plugin description
-     *
-     * @var string
+     * @inheritDoc
      */
-    protected string $description = 'This is a example plugin description for you';
-
-    /**
-     * Plugin author name
-     *
-     * @var string
-     */
-    protected string $author = 'İsa Eken';
-
-    /**
-     * Your plugin version
-     * Semantic version recommended
-     *
-     * @var string
-     */
-    protected string $version = 'v1.0';
-
-    /**
-     * example function
-     *
-     * @return string
-     */
-    public function helloWorld()
+    public function handle(...$arguments): mixed
     {
-        return 'Hello world from: '.__CLASS__;
+        return true;
+    }
+
+    public function test(...$arguments)
+    {
+        dump($arguments);
     }
 }
-
-// optional
-return ExamplePlugin::class;

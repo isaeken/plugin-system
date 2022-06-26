@@ -2,7 +2,10 @@
 
 namespace IsaEken\PluginSystem;
 
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\ServiceProvider;
+use IsaEken\PluginSystem\Collections\PluginCollection;
 
 class PluginSystemServiceProvider extends ServiceProvider
 {
@@ -11,19 +14,19 @@ class PluginSystemServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
-        $this->app->bind('plugins', function ($app) {
-            if (! is_dir(config('plugins.directory'))) {
-                mkdir(config('plugins.directory'));
-            }
+        $pluginSystem = new PluginSystem();
 
-            return (new PluginSystem(config('plugins.directory')))->autoload(
-                null,
-                config('plugins.nested'),
-                config('plugins.folders'),
-            );
-        });
+        $pluginSystem->setFilesystem(Storage::build(config('plugins.filesystem', [
+            'driver' => 'local',
+            'root' => base_path('plugins'),
+        ])));
+        $pluginSystem->setNamespace(config('plugins.namespace', ''));
+        $pluginSystem->setPlugins(new PluginCollection());
+        $pluginSystem->setLogger(Log::channel('single'));
+        $pluginSystem->load(config('plugins.directory'));
+        $this->app->singleton('plugins', $pluginSystem);
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -37,7 +40,7 @@ class PluginSystemServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/plugins.php', 'plugins');
     }

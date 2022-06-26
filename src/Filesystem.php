@@ -167,10 +167,10 @@ class Filesystem implements \Illuminate\Contracts\Filesystem\Filesystem
                 }
 
                 if (is_dir($path)) {
-                    $files = [...$files, $this->files("$directory/$path", $recursive)];
+                    $files = [...$files, $this->files($path, $recursive)];
                 }
 
-                $files[] = "$directory/$path";
+                $files[] = $path;
             }
 
             return $files;
@@ -193,19 +193,18 @@ class Filesystem implements \Illuminate\Contracts\Filesystem\Filesystem
         if (is_null($this->filesystem)) {
             $directories = [];
 
-            foreach (glob($directory.'/*') as $path) {
-                if (! is_dir("$directory/$path") || ($path == '.' || $path == '..')) {
+            foreach (glob("$directory/*") as $path) {
+                if (! is_dir($path) || ($path == '.' || $path == '..')) {
                     continue;
                 }
-
-                $directories[] = "$directory/$path";
+                $directories[] = $path;
 
                 if ($recursive) {
-                    $directories[] = [...$directories, $this->directories("$directory/$path", $recursive)];
+                    $directories[] = [...$directories, $this->directories($path, $recursive)];
                 }
             }
 
-            return $directory;
+            return $directories;
         }
 
         return $this->filesystem->{__FUNCTION__}(...func_get_args());
